@@ -1,7 +1,7 @@
 import './css/styles.css';
 import { Notify } from 'notiflix';
 import debounce from 'lodash.debounce';
-// import fetchCountries from './fetchCountries.js';
+import fetchCountries from './fetchCountries.js';
 
 const DEBOUNCE_DELAY = 300;
 const inputBox = document.querySelector('#search-box');
@@ -66,15 +66,15 @@ function listMarkUp(serverArray) {
         .join('')
 };
  
-function fetchCountries(name) {
-    return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`)
-        .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    },
-  ); 
-};
+// function fetchCountries(name) {
+//     return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`)
+//         .then(response => {
+//       if (!response.ok) {
+//         throw new Error(response.status);
+//       }
+//       return response.json();
+//     },
+//   ); 
+// };
 
 
