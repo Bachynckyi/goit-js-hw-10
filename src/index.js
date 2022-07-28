@@ -44,12 +44,13 @@ function infoMarkUp(serverArray) {
     return serverArray
         .map(({ name, capital, population, flags, languages}) => {
             return `
-        <div>
-        <img src="${flags.svg}" alt="${name.common}" width=50px />
+        <div class="info__card">
+        <img src="${flags.svg}" alt="${name.common}" width=50px class="info__img"/>
         <span>${name.official}</span>
-        <p>Capital: ${capital}</p>
-        <p>Population: ${population}</p>
-        <p>Languages: ${Object.values(languages).join(', ')}</p>
+        </div>
+        <p class="info__names">Capital:<span class="info__values"> ${capital}</span></p>
+        <p class="info__names">Population:<span class="info__values"> ${population}</span></p>
+        <p class="info__names">Languages:<span class="info__values"> ${Object.values(languages).join(', ')}</span></p>
         `})
         .join('');        
 };
@@ -58,9 +59,9 @@ function listMarkUp(serverArray) {
     return serverArray
         .map(({ name, flags }) => {
             return `
-                <li>
+                <li class="list__item">
                 <img src="${flags.svg}" alt="${name.common}" width=30px />
-                <span>${name.official}</span>
+                <span class="list__name">${name.official}</span>
                 </li>`})
         .join('')
 };
